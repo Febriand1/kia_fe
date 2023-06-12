@@ -23,7 +23,7 @@ function pushData() {
       jadwal: {
         jammasuk: getValue("jammasuk"),
         jamkeluar: getValue("jamkeluar"),
-        hari: [getValue("hari").split(",")],
+        hari: getValue("hari").split(","),
       },
       pengampu: {
         namadosen: getValue("namadosen"),
