@@ -29,6 +29,9 @@ function isiRow(value) {
     .replace("#UAS#", value.uts)
     .replace("#GRADE#", value.grade.namagrade)
     .replace("#SKALA#", value.grade.skala)
+    .replace("#IDEDIT#", value._id)
+    .replace("#DELETE#", value._id)
+    .replace("#IDHAPUS#", value._id)
     .replace("#WARNA#", getRandomColor())
     .replace(/#WARNALOGO#/g, getRandomColorName());
   addInner("iniTabel", content);
