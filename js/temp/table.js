@@ -42,7 +42,7 @@ export let isiTabel = `
     <th class="whitespace-nowrap px-4 bg-white text-left">
     <div class="w-auto p-2">
     <p class="text-xs font-semibold text-coolGray-800">#GRADE#</p>
-    <p class="text-xs font-medium text-coolGray-500">#SKALA#</p>
+    <p class="text-xs font-medium text-coolGray-500">#RATA2#</p>
     </div>
     </th>
 
