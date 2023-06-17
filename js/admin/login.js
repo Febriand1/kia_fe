@@ -5,31 +5,40 @@ function loginAdmin(event) {
 
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
-  var target_url = "https://ws-nilai.herokuapp.com/loginadmin";
+  var target_url = "/https://ws-nilai.herokuapp.com/loginadmin";
 
-  var formData = new FormData();
-  formData.append("username", username);
-  formData.append("password", password);
-
-  var requestOptions = {
-    method: "POST",
-    body: formData,
+  var data = {
+    username: username,
+    password: password,
   };
 
-  fetch(target_url, requestOptions)
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.success) {
-        // Login success
-        document.getElementById("message").innerHTML = "Login successful!";
-        // Redirect to another page
-        window.location.href = "../../template/index.html";
+  fetch(target_url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then(function (response) {
+      if (response.ok) {
+        return response.json();
       } else {
-        // Login failed
-        document.getElementById("message").innerHTML = "Invalid username or password";
+        throw new Error("Login failed");
       }
     })
-    .catch((error) => {
-      console.error("Error:", error);
+    .then(function (data) {
+      if (data.success) {
+        // Login berhasil
+        document.getElementById("message").innerHTML = "Login berhasil!";
+        // Redirect ke halaman admin
+        window.location.href = "/../../template/index.html";
+      } else {
+        // Login gagal
+        document.getElementById("message").innerHTML = "Username atau password salah";
+      }
+    })
+    .catch(function (error) {
+      console.error(error);
+      document.getElementById("message").innerHTML = "Terjadi kesalahan saat login";
     });
 }
