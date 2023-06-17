@@ -26,6 +26,7 @@ function loginAdmin(event) {
         window.location.href = "index.html";
       } else {
         alert(result.message);
+        window.location.href = "index.html";
       }
     })
     .catch((error) => console.log("Error:", error));
