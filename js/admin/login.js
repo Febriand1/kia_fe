@@ -1,7 +1,5 @@
-document.getElementById("loginForm").addEventListener("submit", loginAdmin);
-
-function loginAdmin() {
-  // event.preventDefault();
+function loginAdmin(event) {
+  event.preventDefault();
 
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
@@ -34,3 +32,5 @@ function loginAdmin() {
     })
     .catch((error) => console.log("Error:", error));
 }
+
+document.getElementById("loginForm").addEventListener("submit", loginAdmin);
