@@ -1,3 +1,7 @@
+// import { postData } from "https://bukulapak.github.io/api/process.js";
+// import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
+// import { urlPOST, AmbilResponse } from "url_login.js";
+
 document.getElementById("loginForm").addEventListener("submit", function (e) {
   e.preventDefault();
   var username = document.getElementById("username").value;
@@ -28,7 +32,5 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
         console.log(data.message);
       }
     })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+    .catch((error) => console.error("Error:", error));
 });
