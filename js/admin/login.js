@@ -4,11 +4,11 @@ import { urlPOST, AmbilResponse } from "url_admin.js";
 
 function loginAdmin(event) {
   event.preventDefault();
-  let data = {
+  let datajson = {
     username: getValue("username"),
     password: getValue("password"),
   };
-  postData(urlPOST, data, AmbilResponse);
+  postData(urlPOST, datajson, AmbilResponse);
 }
 onClick("submit", loginAdmin);
 
