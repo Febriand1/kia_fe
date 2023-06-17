@@ -23,12 +23,14 @@ function loginAdmin(event) {
   };
 
   fetch(target_url, requestOptions)
-    .then((response) => response.json())
+    .then((response) => response.text())
     .then((result) => {
       alert(result.message);
       if (result.status) {
         console.log(result.status);
         window.location.href = "index.html";
+      } else {
+        null;
       }
     })
     .catch((error) => console.log("Error:", error));
