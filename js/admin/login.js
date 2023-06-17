@@ -10,6 +10,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   };
 
   var requestOptions = {
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
