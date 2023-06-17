@@ -31,7 +31,7 @@ function loginAdmin(event) {
         // Login berhasil
         document.getElementById("message").innerHTML = "Login berhasil!";
         // Redirect ke halaman admin
-        window.location.href = "/../../template/index.html";
+        window.location.href = "../../template/index.html";
       } else {
         // Login gagal
         document.getElementById("message").innerHTML = "Username atau password salah";
