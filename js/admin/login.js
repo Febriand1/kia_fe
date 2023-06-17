@@ -27,11 +27,11 @@ function loginAdmin(event) {
     .then((result) => {
       alert(result.message);
       if (result.status) {
+        console.log(result.status);
         window.location.href = "index.html";
       }
     })
     .catch((error) => console.log("Error:", error));
 }
 
-// document.getElementById("loginForm").addEventListener("submit", loginAdmin);
-document.getElementById("submit", loginAdmin);
+document.getElementById("loginForm").addEventListener("submit", loginAdmin);
