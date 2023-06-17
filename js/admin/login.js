@@ -21,11 +21,13 @@ function loginAdmin(event) {
   })
     .then((response) => response.json())
     .then((result) => {
-      if (result.success) {
-        alert(result.message);
-        window.location.href = "https://febriand1.github.io/kia_fe/template/index.html";
+      alert(result.message);
+      if (result.status) {
+        window.location.href = "index.html";
       } else {
-        alert(result.message);
+        // Reset form fields
+        document.getElementById("username").value = "";
+        document.getElementById("password").value = "";
       }
     })
     .catch((error) => console.log("Error:", error));
