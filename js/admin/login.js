@@ -21,8 +21,13 @@ function loginAdmin(event) {
   })
     .then((response) => response.json())
     .then((result) => {
-      alert(result.message);
-      window.location.href = "index.html";
+      if (result.status == true) {
+        alert(result.message);
+        const newLocal = "index.html";
+        window.location.href = newLocal;
+      } else {
+        alert(result.message);
+      }
     })
     .catch((error) => console.log("Error:", error));
 }
