@@ -1,7 +1,7 @@
 document.getElementById("loginForm").addEventListener("submit", loginAdmin);
 
-function loginAdmin(event) {
-  event.preventDefault();
+function loginAdmin() {
+  // event.preventDefault();
 
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
