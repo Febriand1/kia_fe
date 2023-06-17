@@ -22,7 +22,7 @@ function loginAdmin(event) {
     .then((response) => response.json())
     .then((result) => {
       alert(result.message);
-      if (result.status) {
+      if (result.success) {
         window.location.href = "index.html";
       }
     })
