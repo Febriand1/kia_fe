@@ -21,7 +21,7 @@ function loginAdmin(event) {
   })
     .then((response) => response.json())
     .then((result) => {
-      if (result.success === true) {
+      if (result.status === true) {
         alert(result.message);
         window.location.href = "index.html";
       } else {
