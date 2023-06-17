@@ -1,3 +1,5 @@
+// import { postData } from "https://bukulapak.github.io/api/process.js";
+
 document.getElementById("loginForm").addEventListener("submit", loginAdmin);
 
 function loginAdmin(event) {
@@ -22,8 +24,10 @@ function loginAdmin(event) {
     .then((response) => response.json())
     .then((result) => {
       alert(result.message);
-      if (result.status) {
+      if (result.status === true) {
         window.location.href = "index.html";
+      } else {
+        window.location.href = "p.html";
       }
     })
     .catch((error) => console.log("Error:", error));
