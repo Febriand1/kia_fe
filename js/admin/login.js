@@ -5,7 +5,7 @@ function loginAdmin(event) {
 
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
-  var target_url = "/https://ws-nilai.herokuapp.com/loginadmin";
+  var target_url = "https://ws-nilai.herokuapp.com/loginadmin";
 
   var data = {
     username: username,
