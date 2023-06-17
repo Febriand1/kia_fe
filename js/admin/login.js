@@ -23,7 +23,7 @@ function loginAdmin(event) {
     .then((result) => {
       if (result.success) {
         alert(result.message);
-        window.location.href = "index.html";
+        window.location.href = "../../template/index.html";
       } else {
         alert(result.message);
       }
