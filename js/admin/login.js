@@ -19,15 +19,21 @@ function loginAdmin(event) {
     },
     body: JSON.stringify(data),
   })
-    .then((response) => response.json())
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Login failed");
+      }
+    })
+
     .then((result) => {
       if (result.success) {
         alert(result.message);
-        window.location.href = "../../template/index.html";
+        window.location.href = "index.html";
       } else {
         alert(result.message);
       }
-      // location.reload();
     })
     .catch((error) => console.log("Error:", error));
 }
