@@ -25,9 +25,7 @@ function loginAdmin(event) {
       if (result.status) {
         window.location.href = "index.html";
       } else {
-        // Reset form fields
-        document.getElementById("username").value = "";
-        document.getElementById("password").value = "";
+        return null;
       }
     })
     .catch((error) => console.log("Error:", error));
