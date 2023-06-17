@@ -19,15 +19,11 @@ function loginAdmin(event) {
     },
     body: JSON.stringify(data),
   })
-    // .then((response) => response.json())
+    .then((response) => response.json())
     .then((result) => {
       alert(result.message);
       if (result.status) {
         window.location.href = "index.html";
-      } else {
-        // Reset form fields
-        document.getElementById("username").value = "";
-        document.getElementById("password").value = "";
       }
     })
     .catch((error) => console.log("Error:", error));
