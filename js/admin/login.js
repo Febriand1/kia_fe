@@ -14,7 +14,7 @@ function loginAdmin(event) {
 
   fetch(target_url, {
     method: "POST",
-    redirect: "follow",
+    redirect: "manual",
     headers: {
       "Content-Type": "application/json",
     },
