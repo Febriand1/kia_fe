@@ -21,9 +21,10 @@ function loginAdmin(event) {
   })
     .then((response) => response.json())
     .then((result) => {
-      var message = result.status === true ? result.message : "Error: " + result.message;
+      var status = result.status ? true : false;
+      var message = result.message;
       alert(message);
-      if (result.status === true) {
+      if (status) {
         window.location.href = "index.html";
       }
     })
