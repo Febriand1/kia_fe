@@ -1,6 +1,6 @@
-document.getElementById("loginForm").addEventListener("submit", loginUser);
+document.getElementById("loginForm").addEventListener("submit", loginAdmin);
 
-function loginUser(event) {
+function loginAdmin(event) {
   event.preventDefault();
 
   var username = document.getElementById("username").value;
