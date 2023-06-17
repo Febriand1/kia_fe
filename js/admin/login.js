@@ -21,11 +21,10 @@ function loginAdmin(event) {
   })
     .then((response) => response.json())
     .then((result) => {
-      if (result.status == true) {
+      if (result.status === true) {
         alert(result.message);
         window.location.href = "index.html";
       } else {
-        result.status == false;
         alert(result.message);
         window.location.href = "p.html";
       }
