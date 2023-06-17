@@ -21,9 +21,16 @@ function loginAdmin(event) {
   })
     .then((response) => response.json())
     .then((result) => {
-      if (result.status === false) {
-        alert(result.message);
-        window.location.href = "index.html";
+      switch (result.status) {
+        case true:
+          alert(result.message);
+          window.location.href = "index.html";
+          break;
+        case false:
+          alert(result.message);
+          break;
+        default:
+          console.log("Unexpected status:", result.status);
       }
     })
     .catch((error) => console.log("Error:", error));
