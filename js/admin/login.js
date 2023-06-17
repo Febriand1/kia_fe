@@ -8,7 +8,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     password: password,
   };
 
-  fetch("/login", {
+  fetch("https://ws-nilai.herokuapp.com/admin", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
