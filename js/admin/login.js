@@ -1,27 +1,35 @@
-document.getElementById("loginForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+document.getElementById("loginForm").addEventListener("submit", loginUser);
+
+function loginUser(event) {
+  event.preventDefault();
+
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
+  var target_url = "https://ws-nilai.herokuapp.com/insadmin";
 
-  var data = {
-    username: username,
-    password: password,
+  var formData = new FormData();
+  formData.append("username", username);
+  formData.append("password", password);
+
+  var requestOptions = {
+    method: "DELETE",
+    body: formData,
   };
 
-  fetch("https://ws-nilai.herokuapp.com/admin", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
+  fetch(target_url, requestOptions)
     .then((response) => response.json())
     .then((data) => {
       if (data.success) {
-        window.location.href = "index.html"; // Redirect ke halaman setelah login berhasil
+        // Login success
+        document.getElementById("message").innerHTML = "Login successful!";
+        // Redirect to another page
+        window.location.href = "/dashboard";
       } else {
-        document.getElementById("loginErrorMessage").style.display = "block";
+        // Login failed
+        document.getElementById("message").innerHTML = "Invalid username or password";
       }
     })
-    .catch((error) => console.error("Error:", error));
-});
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
