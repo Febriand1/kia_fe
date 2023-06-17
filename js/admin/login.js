@@ -23,7 +23,7 @@ function loginUser(event) {
         // Login success
         document.getElementById("message").innerHTML = "Login successful!";
         // Redirect to another page
-        window.location.href = "/dashboard";
+        window.location.href = "../../template/index.html";
       } else {
         // Login failed
         document.getElementById("message").innerHTML = "Invalid username or password";
