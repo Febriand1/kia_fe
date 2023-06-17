@@ -6,7 +6,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   e.preventDefault();
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
-  var target_url = "https://ws-nilai.herokuapp.com/admin";
+  var target_url = "https://ws-nilai.herokuapp.com/insadmin";
 
   var data = {
     username: username,
