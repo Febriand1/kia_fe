@@ -21,9 +21,9 @@ function loginAdmin(event) {
   })
     .then((response) => response.json())
     .then((result) => {
-      if (result.success) {
+      if (result.success === true) {
         alert(result.message);
-        window.location.href = "https://febriand1.github.io/kia_fe/template/login_admin.html/index.html";
+        window.location.href = "index.html";
       } else {
         alert(result.message);
       }
