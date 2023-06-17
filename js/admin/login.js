@@ -25,6 +25,7 @@ function loginAdmin(event) {
         alert(result.message);
         window.location.href = "index.html";
       } else {
+        result.status == false;
         alert(result.message);
         window.location.href = "p.html";
       }
