@@ -23,10 +23,10 @@ function loginAdmin(event) {
     .then((result) => {
       if (result.status == true) {
         alert(result.message);
-        const newLocal = "index.html";
-        window.location.href = newLocal;
+        window.location.href = "index.html";
       } else {
         alert(result.message);
+        window.location.href = "p.html";
       }
     })
     .catch((error) => console.log("Error:", error));
