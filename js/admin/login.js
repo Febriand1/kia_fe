@@ -20,7 +20,7 @@ function loginAdmin(event) {
     body: JSON.stringify(data),
   })
     .then((response) => response.json())
-    .then((result) => {
+    .then(function (result) {
       if (result.success) {
         alert(result.message);
         window.location.href = "index.html";
