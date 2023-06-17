@@ -12,7 +12,7 @@ function loginUser(event) {
   formData.append("password", password);
 
   var requestOptions = {
-    method: "DELETE",
+    method: "POST",
     body: formData,
   };
 
