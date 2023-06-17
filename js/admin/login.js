@@ -22,8 +22,8 @@ function loginAdmin(event) {
     .then((response) => response.json())
     .then((result) => {
       alert(result.message);
-      window.location.href = "/../../template/index.html";
-      // location.reload();
+      // window.location.href = "/../../template/index.html";
+      location.reload();
     })
     .catch((error) => console.log("Error:", error));
 }
