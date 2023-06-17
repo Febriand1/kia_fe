@@ -9,7 +9,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   };
 
   fetch("https://ws-nilai.herokuapp.com/admin", {
-    method: "POST",
+    method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
