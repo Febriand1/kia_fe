@@ -24,9 +24,10 @@ function loginAdmin(event) {
       if (result.success) {
         alert(result.message);
         window.location.href = "index.html";
-      } else {
-        alert(result.message);
       }
+      // else {
+      //   alert(result.message);
+      // }
       // location.reload();
     })
     .catch((error) => console.log("Error:", error));
