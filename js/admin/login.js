@@ -19,43 +19,34 @@ function loginAdmin(event) {
     },
     body: JSON.stringify(data),
   })
-    .then((response) => {
+    //     .then((response) => response.json())
+    //     .then((result) => {
+    //       alert(result.message);
+    //       window.location.href = "index.html";
+    //       // location.reload();
+    //     })
+    //     .catch((error) => console.log("Error:", error));
+    // }
+    .then(function (response) {
       if (response.ok) {
         return response.json();
       } else {
         throw new Error("Login failed");
       }
     })
-
-    .then((result) => {
+    .then(function (result) {
       if (result.success) {
-        alert(result.message);
+        // Login berhasil
+        document.getElementById("message").innerHTML = "Login berhasil!";
+        // Redirect ke halaman admin
         window.location.href = "index.html";
       } else {
-        alert(result.message);
+        // Login gagal
+        document.getElementById("message").innerHTML = "Username atau password salah";
       }
     })
-    .catch((error) => console.log("Error:", error));
+    .catch(function (error) {
+      console.error(error);
+      document.getElementById("message").innerHTML = "Terjadi kesalahan saat login";
+    });
 }
-// .then(function (response) {
-//   if (response.ok) {
-//     return response.json();
-//   } else {
-//     throw new Error("Login failed");
-//   }
-// })
-// .then(function (data) {
-//   if (data.success) {
-//     // Login berhasil
-//     document.getElementById("message").innerHTML = "Login berhasil!";
-//     // Redirect ke halaman admin
-//     window.location.href = "../../template/index.html";
-//   } else {
-//     // Login gagal
-//     document.getElementById("message").innerHTML = "Username atau password salah";
-//   }
-// })
-// .catch(function (error) {
-//   console.error(error);
-//   document.getElementById("message").innerHTML = "Terjadi kesalahan saat login";
-// });
