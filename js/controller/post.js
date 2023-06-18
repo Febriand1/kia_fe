@@ -15,7 +15,7 @@ function pushData() {
     uas: parseInt(getValue("uas")),
     grade: {
       namagrade: getValue("namagrade"),
-      skala: getValue("skala"),
+      rata_rata: getValue("rata_rata"),
     },
     kategori: {
       nama_mk: getValue("nama_mk"),
