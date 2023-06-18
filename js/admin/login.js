@@ -25,18 +25,16 @@ function loginAdmin(event) {
   fetch(target_url, requestOptions)
     .then((response) => response.json())
     .then((result) => {
+      alert(result.message);
       if (result.status) {
-        alert(result.message);
         console.log(result.status);
         window.location.href = "index.html";
+        return true;
       } else {
         console.log(result.status);
-        alert("Login tidak valid. Silakan coba lagi.");
+        return false;
       }
     })
-    .catch((error) => {
-      console.log("Error:", error);
-      alert("Terjadi kesalahan dalam proses login. Silakan coba lagi nanti.");
-    });
+    .catch((error) => console.log("Error:", error));
 }
 document.getElementById("loginForm").addEventListener("submit", loginAdmin);
