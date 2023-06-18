@@ -31,7 +31,7 @@ function loginAdmin(event) {
         window.location.href = "index.html";
       }
       if (result.status) {
-        window.location.href = "index.html";
+        window.location.reload();
       } else {
         return;
       }
