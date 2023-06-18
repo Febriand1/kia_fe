@@ -28,7 +28,7 @@ function pushData() {
       pengampu: {
         namadosen: getValue("namadosen"),
         nik: getValue("nik"),
-        phonemumberd: getValue("phonenumberd"),
+        phonenumberd: getValue("phonenumberd"),
       },
     },
     absensi: {
