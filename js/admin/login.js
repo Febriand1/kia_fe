@@ -30,7 +30,9 @@ function loginAdmin(event) {
         console.log(result.status);
         window.location.href = "index.html";
       } else {
-        return;
+        console.log(result.status);
+        // Menampilkan pesan kesalahan atau notifikasi login tidak valid
+        alert("Login tidak valid. Silakan coba lagi.");
       }
     })
     .catch((error) => console.log("Error:", error));
