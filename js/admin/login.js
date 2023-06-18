@@ -27,7 +27,7 @@ function loginAdmin(event) {
     .then((result) => {
       alert(result.message);
       console.log(result.status);
-      if (result.status) {
+      if (result.status === true) {
         window.location.href = "index.html";
       } else {
         return false;
