@@ -31,7 +31,7 @@ function loginAdmin(event) {
       }
     })
     .then((result) => {
-      alert(result.message);
+      // alert(result.message);
       console.log(result.status);
       if (result.status) {
         window.location.href = "index.html";
