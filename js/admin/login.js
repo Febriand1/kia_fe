@@ -27,12 +27,12 @@ function loginAdmin(event) {
       if (result.status) {
         console.log(result.status);
         window.location.href = "index.html";
+        event.preventDefault();
       } else {
         console.log(result.status);
         return false;
       }
     })
     .catch((error) => console.log("Error:", error));
-  event.preventDefault();
 }
 document.getElementById("loginForm").addEventListener("submit", loginAdmin);
