@@ -25,8 +25,8 @@ function loginAdmin(event) {
   fetch(target_url, requestOptions)
     .then((response) => response.json())
     .then((result) => {
-      alert(result.message);
       if (result.status) {
+        alert(result.message);
         console.log(result.status);
         window.location.href = "index.html";
       } else {
