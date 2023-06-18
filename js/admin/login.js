@@ -28,10 +28,6 @@ function loginAdmin(event) {
       alert(result.message);
       if (result.status) {
         return;
-      }
-      if (result.status) {
-        console.log(result.status);
-        window.location.reload();
       } else {
         console.log(result.status);
         window.location.href = "index.html";
