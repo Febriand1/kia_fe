@@ -31,10 +31,12 @@ function loginAdmin(event) {
         window.location.href = "index.html";
       } else {
         console.log(result.status);
-        // Menampilkan pesan kesalahan atau notifikasi login tidak valid
         alert("Login tidak valid. Silakan coba lagi.");
       }
     })
-    .catch((error) => console.log("Error:", error));
+    .catch((error) => {
+      console.log("Error:", error);
+      alert("Terjadi kesalahan dalam proses login. Silakan coba lagi nanti.");
+    });
 }
 document.getElementById("loginForm").addEventListener("submit", loginAdmin);
