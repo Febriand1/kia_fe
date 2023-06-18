@@ -32,7 +32,7 @@ function loginAdmin(event) {
     })
     .then((result) => {
       // alert(result.message);
-      console.log(result.status);
+      // console.log(result.status);
       if (result.status) {
         window.location.href = "index.html";
       } else {
