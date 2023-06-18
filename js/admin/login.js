@@ -27,12 +27,12 @@ function loginAdmin(event) {
       if (response.ok) {
         response.json();
       } else {
-        throw new Error("Error: " + response.status);
+        throw new Error("Error: ");
       }
     })
     .then((result) => {
-      // alert(result.message);
-      // console.log(result.status);
+      alert(result.message);
+      console.log(result.status);
       if (result.status) {
         window.location.href = "index.html";
       } else {
