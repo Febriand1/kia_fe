@@ -1,4 +1,6 @@
 function loginAdmin(event) {
+  event.preventDefault();
+
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
   var target_url = "https://ws-nilai.herokuapp.com/loginadmin";
@@ -21,15 +23,19 @@ function loginAdmin(event) {
   };
 
   fetch(target_url, requestOptions)
-    .then((response) => response.json())
+    .then((response) => {
+      if (response.ok) {
+        response.json();
+      } else {
+        throw new Error("Error: " + response.status);
+      }
+    })
     .then((result) => {
       alert(result.message);
+      console.log(result.status);
       if (result.status) {
-        console.log(result.status);
         window.location.href = "index.html";
-        event.preventDefault();
       } else {
-        console.log(result.status);
         return false;
       }
     })
