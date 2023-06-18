@@ -26,11 +26,10 @@ function loginAdmin(event) {
     .then((response) => response.json())
     .then((result) => {
       alert(result.message);
+      console.log(result.status);
       if (result.status) {
-        console.log(result.status);
         window.location.href = "index.html";
       } else {
-        console.log(result.status);
         return false;
       }
     })
