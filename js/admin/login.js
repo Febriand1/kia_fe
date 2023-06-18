@@ -24,15 +24,16 @@ function loginAdmin(event) {
 
   fetch(target_url, requestOptions)
     .then((response) => response.json())
-    .then((result) => {
-      alert(result.message);
-      if (result.status) {
-        return;
-      } else {
-        console.log(result.status);
+    .then((count) => {
+      alert(count.message);
+      if (count.status) {
+        console.log(count.status);
         window.location.href = "index.html";
+      } else {
+        return;
       }
     })
     .catch((error) => console.log("Error:", error));
 }
+
 document.getElementById("loginForm").addEventListener("submit", loginAdmin);
