@@ -24,10 +24,10 @@ function loginAdmin(event) {
 
   fetch(target_url, requestOptions)
     .then((response) => response.json())
-    .then((count) => {
-      alert(count.message);
-      if (count.status) {
-        console.log(count.status);
+    .then((result) => {
+      alert(result.message);
+      if (result.status) {
+        console.log(result.status);
         window.location.href = "index.html";
       } else {
         return;
