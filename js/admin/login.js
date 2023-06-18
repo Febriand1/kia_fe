@@ -29,6 +29,9 @@ function loginAdmin(event) {
       if (result.status) {
         console.log(result.status);
         window.location.href = "index.html";
+      }
+      if (result.status) {
+        window.location.href = "index.html";
       } else {
         return;
       }
