@@ -8,7 +8,7 @@ export function isiData(results) {
     { id: "uts", path: "uts" },
     { id: "uas", path: "uas" },
     { id: "namagrade", path: "grade.namagrade" },
-    { id: "rata_rata", path: "grade.rata_rata" },
+    { id: "skala", path: "grade.skala" },
     { id: "nama_mk", path: "kategori.nama_mk" },
     { id: "sks", path: "kategori.sks" },
     { id: "jammasuk", path: "kategori.jadwal.jammasuk" },

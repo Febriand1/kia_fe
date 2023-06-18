@@ -28,7 +28,7 @@ function isiRow(value) {
     .replace("#UTS#", value.uts)
     .replace("#UAS#", value.uts)
     .replace("#GRADE#", value.grade.namagrade)
-    .replace("#RATA2#", value.grade.rata_rata)
+    .replace("#SKALA#", value.grade.skala)
     .replace("#IDEDIT#", value._id)
     .replace("#DELETE#", value._id)
     .replace("#IDHAPUS#", value._id)
