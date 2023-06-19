@@ -82,7 +82,11 @@ function pushData() {
     },
   };
   postData(urlPOST, data, AmbilResponse);
-  updateGradeAndSkala();
 }
 
 onClick("button", pushData);
+
+const inputElements = document.querySelectorAll("input[type='text'], input[type='number']");
+inputElements.forEach((input) => {
+  input.addEventListener("input", updateGradeAndSkala);
+});
