@@ -1,5 +1,5 @@
 import { putData } from "https://bukulapak.github.io/api/process.js";
-import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
+import { onClick, getValue, setValue } from "https://bukulapak.github.io/element/process.js";
 import { urlPUT, AmbilResponse } from "../config/url_put.js";
 
 const namagradeInput = getValue("namagrade");
