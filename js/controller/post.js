@@ -39,8 +39,10 @@ function updateGradeAndSkala() {
   const hasilPerhitungan = hitungRataRata({ tugas1, tugas2, tugas3, tugas4, tugas5 }, uts, uas);
 
   // Mengisi nilai pada form namagrade dan skala
-  namagradeInput.value = hasilPerhitungan.rataRata.toFixed(2);
-  skalaInput.value = hasilPerhitungan.skala;
+  setValue("namagrade", hasilPerhitungan.namagrade);
+  setValue("skala", hasilPerhitungan.skala);
+  // namagradeInput.value = hasilPerhitungan.rataRata.toFixed(2);
+  // skalaInput.value = hasilPerhitungan.skala;
 }
 
 function pushData() {
@@ -86,7 +88,7 @@ function pushData() {
 
 onClick("button", pushData);
 
-const inputElements = document.querySelectorAll("input[type='text'], input[type='number']");
+const inputElements = document.querySelectorAll('input[type="text"], input[type="number"]');
 inputElements.forEach((input) => {
   input.addEventListener("input", updateGradeAndSkala);
 });
