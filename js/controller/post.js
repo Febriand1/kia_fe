@@ -1,8 +1,11 @@
 import { postData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
 import { urlPOST, AmbilResponse } from "../config/url_post.js";
+import { hitungRataRata } from "./post_avg.js";
 
 function pushData() {
+  let hasilPerhitungan = hitungRataRata(alltugas, uts, uas);
+
   let data = {
     alltugas: {
       tugas1: parseInt(getValue("tugas1")),
@@ -14,8 +17,8 @@ function pushData() {
     uts: parseInt(getValue("uts")),
     uas: parseInt(getValue("uas")),
     grade: {
-      namagrade: getValue("namagrade"),
-      skala: getValue("skala"),
+      namagrade: hasilPerhitungan.rataRata.toFixed(2),
+      skala: hasilPerhitungan.skala,
     },
     kategori: {
       nama_mk: getValue("nama_mk"),
