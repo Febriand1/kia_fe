@@ -2,8 +2,8 @@ import { postData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue, setValue } from "https://bukulapak.github.io/element/process.js";
 import { urlPOST, AmbilResponse } from "../config/url_post.js";
 
-const namagradeInput = document.getElementById("namagrade");
-const skalaInput = document.getElementById("skala");
+const namagradeInput = getValue("namagrade");
+const skalaInput = getValue("skala");
 
 function hitungRataRata(tugas, uts, uas) {
   const jumlahTugas = tugas.tugas1 + tugas.tugas2 + tugas.tugas3 + tugas.tugas4 + tugas.tugas5;
@@ -82,6 +82,7 @@ function pushData() {
     },
   };
   postData(urlPOST, data, AmbilResponse);
+  updateGradeAndSkala();
 }
 
 onClick("button", pushData);
