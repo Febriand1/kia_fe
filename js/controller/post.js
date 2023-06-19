@@ -39,8 +39,8 @@ function updateGradeAndSkala() {
   const hasilPerhitungan = hitungRataRata({ tugas1, tugas2, tugas3, tugas4, tugas5 }, uts, uas);
 
   // Mengisi nilai pada form namagrade dan skala
-  setValue("namagrade", hasilPerhitungan.namagrade);
-  setValue("skala", hasilPerhitungan.skala);
+  setValue("namagrade", hasilPerhitungan.skala);
+  setValue("skala", hasilPerhitungan.rataRata.toFixed(2));
   // namagradeInput.value = hasilPerhitungan.rataRata.toFixed(2);
   // skalaInput.value = hasilPerhitungan.skala;
 }
