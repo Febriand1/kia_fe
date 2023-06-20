@@ -26,24 +26,24 @@ function hitungRataRata(tugas, uts, uas) {
   return { rataRata, skala };
 }
 
-function updateGradeAndSkala() {
-  const tugas1 = parseInt(getValue("tugas1"));
-  const tugas2 = parseInt(getValue("tugas2"));
-  const tugas3 = parseInt(getValue("tugas3"));
-  const tugas4 = parseInt(getValue("tugas4"));
-  const tugas5 = parseInt(getValue("tugas5"));
-  const uts = parseInt(getValue("uts"));
-  const uas = parseInt(getValue("uas"));
+// function updateGradeAndSkala() {
+//   const tugas1 = parseInt(getValue("tugas1"));
+//   const tugas2 = parseInt(getValue("tugas2"));
+//   const tugas3 = parseInt(getValue("tugas3"));
+//   const tugas4 = parseInt(getValue("tugas4"));
+//   const tugas5 = parseInt(getValue("tugas5"));
+//   const uts = parseInt(getValue("uts"));
+//   const uas = parseInt(getValue("uas"));
 
-  // Menghitung rata-rata
-  const hasilPerhitungan = hitungRataRata({ tugas1, tugas2, tugas3, tugas4, tugas5 }, uts, uas);
+//   // Menghitung rata-rata
+//   const hasilPerhitungan = hitungRataRata({ tugas1, tugas2, tugas3, tugas4, tugas5 }, uts, uas);
 
-  // Mengisi nilai pada form namagrade dan skala
-  setValue("namagrade", hasilPerhitungan.skala);
-  setValue("skala", hasilPerhitungan.rataRata.toFixed(2));
-  // namagradeInput.value = hasilPerhitungan.rataRata.toFixed(2);
-  // skalaInput.value = hasilPerhitungan.skala;
-}
+//   // Mengisi nilai pada form namagrade dan skala
+//   setValue("namagrade", hasilPerhitungan.skala);
+//   setValue("skala", hasilPerhitungan.rataRata.toFixed(2));
+//   // namagradeInput.value = hasilPerhitungan.rataRata.toFixed(2);
+//   // skalaInput.value = hasilPerhitungan.skala;
+// }
 
 function pushData() {
   let data = {
@@ -88,7 +88,7 @@ function pushData() {
 
 onClick("button1", pushData);
 
-const inputElements = document.querySelectorAll('input[type="text"], input[type="number"]');
-inputElements.forEach((input) => {
-  input.addEventListener("input", updateGradeAndSkala);
-});
+// const inputElements = document.querySelectorAll('input[type="text"], input[type="number"]');
+// inputElements.forEach((input) => {
+//   input.addEventListener("input", updateGradeAndSkala);
+// });
