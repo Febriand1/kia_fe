@@ -1,3 +1,5 @@
+import { updateGradeAndSkala } from "./rata-rata.js";
+
 export function isiData(results) {
   const inputMapping = [
     { id: "tugas1", path: "alltugas.tugas1" },
@@ -27,6 +29,9 @@ export function isiData(results) {
     const inputElement = document.getElementById(id);
     const value = getNestedValue(results, path, index, property);
     inputElement.value = value;
+    if (id.startsWith("tugas") || id === "uts" || id === "uas") {
+      inputElement.addEventListener("input", updateGradeAndSkala);
+    }
   });
 }
 
@@ -40,3 +45,8 @@ function getNestedValue(obj, path, index, property) {
 
   return value;
 }
+
+const inputElements = document.querySelectorAll('input[type="text"], input[type="number"]');
+inputElements.forEach((input) => {
+  input.addEventListener("input", updateGradeAndSkala);
+});
