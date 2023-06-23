@@ -23,90 +23,94 @@ function validateForm() {
   var rata_rata = document.forms["myForm"]["skala"].value;
 
   // Melakukan validasi
-  //   if (nama == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-
-  //   if (npm == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-  //   if (nohpm == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-  //   if (hadir == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-  //   if (matkul == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-  //   if (sks == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-  //   if (nik == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-  //   if (dosen == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-  //   if (nohpd == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-  //   if (jammasuk == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-  //   if (jamkeluar== "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-  //   if (hari == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-  //   if (tugas1 == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-  //   if (tugas2 == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-  //   if (hari == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-  //   if (hari == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-  //   if (hari == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-  //   if (hari == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-  //   if (hari == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-  //   if (hari == "") {
-  //     alert("Harus diisi");
-  //     return false;
-  //   }
-
-  if ((nama, npm, nohpm, hadir, matkul, sks, nik, dosen, nohpd, jammasuk, jamkeluar, hari, tugas1, tugas2, tugas3, tugas4, tugas5, uts, uas, grade, rata_rata == "")) {
+  if (nama == "") {
     alert("Harus diisi");
     return false;
   }
+
+  if (npm == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (nohpm == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (hadir == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (matkul == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (sks == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (nik == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (dosen == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (nohpd == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (jammasuk == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (jamkeluar == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (hari == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (tugas1 == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (tugas2 == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (tugas3 == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (tugas4 == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (tugas5 == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (uts == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (uas == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (grade == "") {
+    alert("Harus diisi");
+    return false;
+  }
+  if (rata_rata == "") {
+    alert("Harus diisi");
+    return false;
+  }
+
+  //   if ((nama, npm, nohpm, hadir, matkul, sks, nik, dosen, nohpd, jammasuk, jamkeluar, hari, tugas1, tugas2, tugas3, tugas4, tugas5, uts, uas, grade, rata_rata == "")) {
+  //     alert("Harus diisi");
+  //     return false;
+  //   }
 }
