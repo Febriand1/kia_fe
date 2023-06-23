@@ -2,6 +2,7 @@ import { postData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
 import { urlPOST, AmbilResponse } from "../config/url_post.js";
 import { updateGradeAndSkala } from "./rata-rata.js";
+import { validateForm } from "../validasi/v_input.js";
 
 function pushData() {
   let data = {
@@ -41,7 +42,7 @@ function pushData() {
       },
     },
   };
-  postData(urlPOST, data, AmbilResponse);
+  postData(urlPOST, data, validateForm, AmbilResponse);
 }
 
 onClick("button", pushData);
