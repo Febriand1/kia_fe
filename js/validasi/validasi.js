@@ -1,16 +1,15 @@
-function validateForm(event) {
-
-  var nameInput = document.getElementById("name");
-  var nameError = document.getElementById("nameError");
+function validasiForm() {
+  var nama = document.getElementById("nama");
+  var namaError = document.getElementById("namaError");
 
   // Menghapus pesan error sebelumnya
-  nameError.innerHTML = "";
+  namaError.innerHTML = "";
 
   // Validasi form
-  if (nameInput.value === "") {
-    nameInput.classList.add("error");
-    nameError.innerHTML = "Nama harus diisi";
+  if (nama.value === "") {
+    nama.classList.add("error");
+    namaError.innerHTML = "Nama harus diisi";
   } else {
-    nameInput.classList.remove("error");
+    nama.classList.remove("error");
   }
 }
