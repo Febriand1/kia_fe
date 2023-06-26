@@ -1,6 +1,6 @@
 import { getValue } from "https://bukulapak.github.io/element/process.js";
 
-export function validateForm(event) {
+export function validasiForm(event) {
   event.preventDefault();
 
   var nama = getValue("nama");
