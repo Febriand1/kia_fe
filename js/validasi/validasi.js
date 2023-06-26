@@ -1,4 +1,4 @@
-export function validateForm() {
+export function validasiForm() {
   // Mendapatkan nilai input dari elemen
   var nama = document.getElementById("nama").value;
 
