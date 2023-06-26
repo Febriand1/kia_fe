@@ -1,6 +1,10 @@
-function validasiForm() {
-  var nama = document.getElementById("nama");
-  var namaError = document.getElementById("namaError");
+import { getValue } from "https://bukulapak.github.io/element/process.js";
+
+export function validateForm(event) {
+  event.preventDefault();
+
+  var nama = getValue("nama");
+  var namaError = getValue("namaError");
 
   // Menghapus pesan error sebelumnya
   namaError.innerHTML = "";

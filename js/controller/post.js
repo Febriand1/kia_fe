@@ -1,8 +1,8 @@
 import { postData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
 import { urlPOST, AmbilResponse } from "../config/url_post.js";
-import { updateGradeAndSkala } from "./rata-rata.js";
-import { validasiForm } from "../validasi/validasi.js";
+import { updateGradeAndSkala } from "../tambahan/rata-rata.js";
+import { validasiForm } from "../tambahan/validasi.js";
 
 function pushData() {
   let data = {
