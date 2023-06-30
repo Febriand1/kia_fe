@@ -1,10 +1,8 @@
-import { getValue, container } from "https://bukulapak.github.io/element/process.js";
-
 function loginAdmin(event) {
   event.preventDefault();
 
-  var username = getValue("username");
-  var password = getValue("password");
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
   var target_url = "https://ws-nilai.herokuapp.com/loginadmin";
 
   var data = {
@@ -35,4 +33,4 @@ function loginAdmin(event) {
     })
     .catch((error) => console.log("Error:", error));
 }
-container("loginForm").addEventListener("submit", loginAdmin);
+document.getElementById("loginForm").addEventListener("submit", loginAdmin);
