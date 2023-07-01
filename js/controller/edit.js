@@ -1,4 +1,4 @@
-import { updateGradeAndSkala } from "../tambahan/rata-rata";
+import { updateGradeAndSkala } from "../tambahan/rata-rata.js";
 
 export function isiData(results) {
   const inputMapping = [
