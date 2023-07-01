@@ -9,3 +9,4 @@ export function validasiForm(event) {
     errorText.textContent = "";
   }
 }
+document.getElementById("formInsert").addEventListener("button", validasiForm);
