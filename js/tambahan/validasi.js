@@ -1,19 +1,13 @@
-import { getValue } from "https://bukulapak.github.io/element/process.js";
-
 export function validasiForm(event) {
   event.preventDefault();
 
-  var nama = getValue("nama");
-  var namaError = getValue("namaError");
+  var nama = document.getElementById("nama").value;
+  var errorText = document.getElementById("errorText");
 
-  // Menghapus pesan error sebelumnya
-  namaError.innerHTML = "";
-
-  // Validasi form
-  if (nama.value === "") {
-    nama.classList.add("error");
-    namaError.innerHTML = "Nama harus diisi";
+  if (nama === "") {
+    errorText.textContent = "nama tidak boleh kosong!";
   } else {
-    nama.classList.remove("error");
+    errorText.textContent = "";
   }
 }
+document.getElementById("nama").addEventListener("submit", validasiForm);
