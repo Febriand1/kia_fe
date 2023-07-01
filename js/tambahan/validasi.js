@@ -10,4 +10,3 @@ export function validasiForm(event) {
     errorText.textContent = "";
   }
 }
-document.getElementById("nama").addEventListener("submit", validasiForm);
