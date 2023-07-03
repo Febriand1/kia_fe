@@ -47,5 +47,8 @@ export function validasiForm(event) {
     skala != ""
   ) {
     return true;
+  } else {
+    alert("Data tidak boleh kosong!");
+    return false;
   }
 }

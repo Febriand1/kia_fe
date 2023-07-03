@@ -6,7 +6,6 @@ import { validasiForm } from "../tambahan/validasi.js";
 
 function pushData() {
   if (validasiForm) {
-    alert("Invalid input. Please check your input values.");
     return;
   }
 
