@@ -2,9 +2,12 @@ import { postData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
 import { urlPOST, AmbilResponse } from "../config/url_post.js";
 import { updateGradeAndSkala } from "../tambahan/rata-rata.js";
-import { validasiForm } from "../tambahan/validasi.js";
+// import { validasiForm } from "../tambahan/validasi.js";
 
 function pushData() {
+  // if (!validasiForm()) {
+  //   return;
+  // }
   let data = {
     alltugas: {
       tugas1: parseInt(getValue("tugas1")),
@@ -42,9 +45,8 @@ function pushData() {
       },
     },
   };
-  if (validasiForm()) {
-    postData(urlPOST, data, AmbilResponse);
-  }
+
+  postData(urlPOST, data, AmbilResponse);
 }
 
 onClick("button", pushData);
