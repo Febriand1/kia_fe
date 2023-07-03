@@ -50,7 +50,8 @@ function pushData() {
   postData(urlPOST, data, AmbilResponse);
 }
 
-onClick("button", pushData);
+const submitButton = document.getElementById("button");
+submitButton.addEventListener("click", pushData);
 
 const inputElements = document.querySelectorAll('input[type="text"], input[type="number"]');
 inputElements.forEach((input) => {
