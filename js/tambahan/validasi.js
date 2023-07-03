@@ -46,7 +46,7 @@ export function validasiForm() {
     isNaN(npm) ||
     phonenumber.trim() === ""
   ) {
-    alert("Please fill in all the required fields.");
+    alert("Data tidak boleh kosong!");
     return false;
   }
   return true;
