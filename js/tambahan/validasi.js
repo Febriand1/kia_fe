@@ -46,6 +46,9 @@ export function validasiForm(event) {
     namagrade != "" &&
     skala != ""
   ) {
+    console.log("Form is valid");
     return true;
   }
+  alert("Data tidak boleh kosong!");
+  return false;
 }
