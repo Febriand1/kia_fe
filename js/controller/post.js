@@ -4,11 +4,10 @@ import { urlPOST, ambilResponse } from "../config/url_post.js";
 import { updateGradeAndSkala } from "../tambahan/rata-rata.js";
 import { validasiForm } from "../tambahan/validasi.js";
 
+if (!validasiForm()) {
+  return;
+}
 function pushData() {
-  if (!validasiForm()) {
-    return;
-  }
-
   let data = {
     alltugas: {
       tugas1: parseInt(getValue("tugas1")),
