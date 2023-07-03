@@ -1,3 +1,10 @@
+// Function to display the login form initially
+function displayLoginForm() {
+  var loginForm = document.getElementById("loginForm");
+  loginForm.style.display = "block";
+}
+
+// Function to handle the login submission
 function loginAdmin(event) {
   event.preventDefault();
 
@@ -34,6 +41,7 @@ function loginAdmin(event) {
     .catch((error) => console.log("Error:", error));
 }
 
+// Add event listener to the window load event
 window.addEventListener("load", function () {
   displayLoginForm(); // Display the login form initially
 
