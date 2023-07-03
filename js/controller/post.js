@@ -6,6 +6,7 @@ import { validasiForm } from "../tambahan/validasi.js";
 
 function pushData() {
   if (!validasiForm()) {
+    alert("Please fill in all the required fields.");
     return;
   }
   let data = {
@@ -50,7 +51,6 @@ function pushData() {
 }
 
 onClick("button", pushData);
-console.log("onClick function called");
 
 const inputElements = document.querySelectorAll('input[type="text"], input[type="number"]');
 inputElements.forEach((input) => {
