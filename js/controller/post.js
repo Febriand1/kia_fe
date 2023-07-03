@@ -1,7 +1,6 @@
 import { postData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
-import { urlPOST, ambilResponse } from "../config/url_post.js";
-import { updateGradeAndSkala } from "../tambahan/rata-rata.js";
+import { urlPOST, AmbilResponse } from "../config/url_post.js";
 
 function pushData() {
   let data = {
@@ -41,12 +40,7 @@ function pushData() {
       },
     },
   };
-  postData(urlPOST, data, ambilResponse);
+  postData(urlPOST, data, AmbilResponse);
 }
 
 onClick("button", pushData);
-
-const inputElements = document.querySelectorAll('input[type="text"], input[type="number"]');
-inputElements.forEach((input) => {
-  input.addEventListener("input", updateGradeAndSkala);
-});
