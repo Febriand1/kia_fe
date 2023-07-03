@@ -5,9 +5,6 @@ import { updateGradeAndSkala } from "../tambahan/rata-rata.js";
 import { validasiForm } from "../tambahan/validasi.js";
 
 function pushData() {
-  if (!validasiForm()) {
-    return;
-  }
   let data = {
     alltugas: {
       tugas1: parseInt(getValue("tugas1")),
@@ -45,7 +42,9 @@ function pushData() {
       },
     },
   };
-
+  if (!validasiForm()) {
+    return;
+  }
   postData(urlPOST, data, AmbilResponse);
 }
 
