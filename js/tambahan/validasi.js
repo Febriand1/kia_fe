@@ -24,30 +24,31 @@ export function validasiForm(event) {
   var skala = document.getElementById("skala").value;
 
   if (
-    nama != "" &&
-    npm != "" &&
-    phonenumber != "" &&
-    jumlahkehadiran != "" &&
-    nama_mk != "" &&
-    sks != "" &&
-    nik != "" &&
-    namadosen != "" &&
-    phonenumberd != "" &&
-    jammasuk != "" &&
-    jamkeluar != "" &&
-    hari != "" &&
-    tugas1 != "" &&
-    tugas2 != "" &&
-    tugas3 != "" &&
-    tugas4 != "" &&
-    tugas5 != "" &&
-    uts != "" &&
-    uas != "" &&
-    namagrade != "" &&
-    skala != ""
+    nama === "" ||
+    npm === "" ||
+    phonenumber === "" ||
+    jumlahkehadiran === "" ||
+    nama_mk === "" ||
+    sks === "" ||
+    nik === "" ||
+    namadosen === "" ||
+    phonenumberd === "" ||
+    jammasuk === "" ||
+    jamkeluar === "" ||
+    hari === "" ||
+    tugas1 === "" ||
+    tugas2 === "" ||
+    tugas3 === "" ||
+    tugas4 === "" ||
+    tugas5 === "" ||
+    uts === "" ||
+    uas === "" ||
+    namagrade === "" ||
+    skala === ""
   ) {
-    console.log("Form is valid");
-    return true;
+    alert("Data tidak boleh kosong!");
+    return false;
   }
-  return false;
+
+  return true;
 }

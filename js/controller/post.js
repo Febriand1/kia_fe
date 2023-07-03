@@ -6,7 +6,6 @@ import { validasiForm } from "../tambahan/validasi.js";
 
 function pushData() {
   if (!validasiForm()) {
-    alert("Data tidak boleh kosong!");
     return;
   }
   let data = {
