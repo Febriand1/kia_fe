@@ -42,7 +42,7 @@ function pushData() {
       },
     },
   };
-  if (!validasiForm()) {
+  if (validasiForm()) {
     postData(urlPOST, data, AmbilResponse);
   }
 }
