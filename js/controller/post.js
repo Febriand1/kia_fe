@@ -6,7 +6,6 @@ import { validasiForm } from "../tambahan/validasi.js";
 
 function pushData() {
   if (!validasiForm()) {
-    alert("Please fill in all the required fields.");
     return;
   }
   let data = {
