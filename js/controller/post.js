@@ -42,13 +42,11 @@ function pushData() {
       },
     },
   };
-
-  if (validasiForm) {
-    postData(urlPOST, data, AmbilResponse);
-  }
+  postData(urlPOST, data, AmbilResponse);
 }
-
-onClick("button", pushData);
+if (validasiForm) {
+  onClick("button", pushData);
+}
 
 const inputElements = document.querySelectorAll('input[type="text"], input[type="number"]');
 inputElements.forEach((input) => {
