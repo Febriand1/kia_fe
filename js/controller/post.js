@@ -43,9 +43,8 @@ function pushData() {
     },
   };
   if (!validasiForm()) {
-    return;
+    postData(urlPOST, data, AmbilResponse);
   }
-  postData(urlPOST, data, AmbilResponse);
 }
 
 onClick("button", pushData);
