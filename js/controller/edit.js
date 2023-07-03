@@ -33,9 +33,6 @@ export function isiData(results) {
     if (id.startsWith("tugas") || id === "uts" || id === "uas") {
       inputElement.addEventListener("input", updateGradeAndSkala);
     }
-    if (validasiForm()) {
-      return;
-    }
   });
 }
 
@@ -46,10 +43,12 @@ function getNestedValue(obj, path, index, property) {
   if (Array.isArray(value) && value.length > index && value[index].hasOwnProperty(property)) {
     return value[index][property];
   }
-
   return value;
 }
 
+if (!validasiForm()) {
+  return;
+}
 const inputElements = document.querySelectorAll('input[type="text"], input[type="number"]');
 inputElements.forEach((input) => {
   input.addEventListener("input", updateGradeAndSkala);
