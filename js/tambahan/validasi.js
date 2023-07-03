@@ -1,6 +1,6 @@
 import { getValue } from "https://bukulapak.github.io/element/process.js";
 
-export function validasiForm() {
+export function validasiInput() {
   var tugas1 = parseInt(getValue("tugas1"));
   var tugas2 = parseInt(getValue("tugas2"));
   var tugas3 = parseInt(getValue("tugas3"));

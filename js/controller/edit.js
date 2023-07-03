@@ -46,9 +46,6 @@ function getNestedValue(obj, path, index, property) {
   return value;
 }
 
-if (!validasiForm()) {
-  return;
-}
 const inputElements = document.querySelectorAll('input[type="text"], input[type="number"]');
 inputElements.forEach((input) => {
   input.addEventListener("input", updateGradeAndSkala);

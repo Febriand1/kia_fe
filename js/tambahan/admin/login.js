@@ -1,36 +1,14 @@
+import { postData } from "https://bukulapak.github.io/api/process.js";
+import { getValue } from "https://bukulapak.github.io/element/process.js";
+import { urlLOGIN, AmbilResponse } from "./url_login.js";
+
 function loginAdmin(event) {
   event.preventDefault();
 
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-  var target_url = "https://ws-nilai.herokuapp.com/loginadmin";
-
-  var data = {
-    username: username,
-    password: password,
+  let data = {
+    username: getValue("username"),
+    password: getValue("password"),
   };
-
-  var raw = JSON.stringify(data);
-
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-
-  var requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow",
-  };
-
-  fetch(target_url, requestOptions)
-    .then((response) => response.json())
-    .then((result) => {
-      alert(result.message);
-      console.log(result.status);
-      if (result.status === 200) {
-        window.location.href = "index.html";
-      }
-    })
-    .catch((error) => console.log("Error:", error));
+  postData(urlLOGIN, data, AmbilResponse);
 }
 document.getElementById("loginForm").addEventListener("submit", loginAdmin);
