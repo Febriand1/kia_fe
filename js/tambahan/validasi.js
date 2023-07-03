@@ -48,7 +48,8 @@ export function validasiForm(event) {
   ) {
     console.log("Form is valid");
     return true;
+  } else {
+    alert("Data tidak boleh kosong!");
+    return false;
   }
-  alert("Data tidak boleh kosong!");
-  return false;
 }
