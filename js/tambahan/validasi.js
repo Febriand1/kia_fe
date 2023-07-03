@@ -1,4 +1,4 @@
-function validasiForm(event) {
+export function validasiForm(event) {
   event.preventDefault();
 
   var nama = document.getElementById("nama").value;
@@ -47,9 +47,5 @@ function validasiForm(event) {
     skala != ""
   ) {
     return true;
-  } else {
-    alert("Anda harus mengisi data dengan lengkap !");
   }
 }
-
-document.getElementById("formInsert").addEventListener("submit", validasiForm);
