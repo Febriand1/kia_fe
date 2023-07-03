@@ -2,9 +2,6 @@ import { updateGradeAndSkala } from "../tambahan/rata-rata.js";
 import { validasiForm } from "../tambahan/validasi.js";
 
 export function isiData(results) {
-  if (validasiForm()) {
-    return;
-  }
   const inputMapping = [
     { id: "tugas1", path: "alltugas.tugas1" },
     { id: "tugas2", path: "alltugas.tugas2" },
@@ -35,6 +32,9 @@ export function isiData(results) {
     inputElement.value = value;
     if (id.startsWith("tugas") || id === "uts" || id === "uas") {
       inputElement.addEventListener("input", updateGradeAndSkala);
+    }
+    if (validasiForm()) {
+      return;
     }
   });
 }
