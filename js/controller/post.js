@@ -43,7 +43,7 @@ function pushData() {
     },
   };
   if (!validasiForm()) {
-    alert("Data tidak boleh kosong!");
+    console.log("Data tidak boleh kosong!");
     return;
   } else {
     postData(urlPOST, data, AmbilResponse);
