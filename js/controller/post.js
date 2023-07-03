@@ -8,6 +8,7 @@ function pushData() {
   if (!validasiForm()) {
     return;
   }
+
   let data = {
     alltugas: {
       tugas1: parseInt(getValue("tugas1")),
