@@ -5,7 +5,8 @@ import { updateGradeAndSkala } from "../tambahan/rata-rata.js";
 import { validasiForm } from "../tambahan/validasi.js";
 
 function pushData() {
-  if (validasiForm()) {
+  if (!validasiForm()) {
+    alert("Data tidak boleh kosong!");
     return;
   }
 

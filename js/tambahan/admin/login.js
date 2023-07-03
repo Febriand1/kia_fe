@@ -33,4 +33,10 @@ function loginAdmin(event) {
     })
     .catch((error) => console.log("Error:", error));
 }
-document.getElementById("loginForm").addEventListener("submit", loginAdmin);
+
+window.addEventListener("load", function () {
+  displayLoginForm(); // Display the login form initially
+
+  var loginForm = document.getElementById("loginForm");
+  loginForm.addEventListener("submit", loginAdmin);
+});
