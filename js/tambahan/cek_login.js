@@ -1,7 +1,7 @@
 // Periksa status login saat halaman dimuat
 window.addEventListener("DOMContentLoaded", function () {
   if (!isLoggedIn() && !isLoginPage()) {
-    window.location.href = "/";
+    window.location.href = "login_admin.html";
   }
 });
 
