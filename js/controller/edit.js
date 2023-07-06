@@ -50,8 +50,9 @@ inputElements.forEach((input) => {
   input.addEventListener("input", updateGradeAndSkala);
 });
 
-const saveButton = document.getElementById("button1"); 
-saveButton.addEventListener("click", function () {
+const saveButton = document.getElementById("button1");
+saveButton.addEventListener("click", function (event) {
+  event.preventDefault();
   if (!validasiInput()) {
     return; // Stop further processing if validation fails
   }
