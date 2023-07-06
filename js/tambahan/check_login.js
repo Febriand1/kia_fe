@@ -1,7 +1,6 @@
 // Periksa status login saat halaman dimuat
 window.addEventListener("DOMContentLoaded", function () {
   if (!isLoggedIn()) {
-    console.log(isLoggedIn);
     window.location.href = "login_admin.html";
   }
 });
@@ -10,7 +9,6 @@ window.addEventListener("DOMContentLoaded", function () {
 function isLoggedIn() {
   const token = localStorage.getItem("jwtToken");
   // Gantikan kondisi di bawah ini dengan validasi sesuai kebutuhan
-  console.log(token);
   if (token) {
     // Pengguna telah login
     return true;
