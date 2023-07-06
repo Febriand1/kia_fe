@@ -24,30 +24,43 @@ export function validasiInput() {
   var phonenumber = getValue("phonenumber");
 
   if (
-    isNaN(tugas1) ||
-    isNaN(tugas2) ||
-    isNaN(tugas3) ||
-    isNaN(tugas4) ||
-    isNaN(tugas5) ||
-    isNaN(uts) ||
-    isNaN(uas) ||
+    tugas1.trim() === "" ||
+    tugas2.trim() === "" ||
+    tugas3.trim() === "" ||
+    tugas4.trim() === "" ||
+    tugas5.trim() === "" ||
+    uts.trim() === "" ||
+    uas.trim() === "" ||
     namagrade.trim() === "" ||
     skala.trim() === "" ||
     nama_mk.trim() === "" ||
-    isNaN(sks) ||
+    sks.trim() === "" ||
     jammasuk.trim() === "" ||
     jamkeluar.trim() === "" ||
     hari.trim() === "" ||
     namadosen.trim() === "" ||
     nik.trim() === "" ||
     phonenumberd.trim() === "" ||
-    isNaN(jumlahkehadiran) ||
+    jumlahkehadiran.trim() === "" ||
     nama.trim() === "" ||
-    isNaN(npm) ||
+    npm.trim() === "" ||
     phonenumber.trim() === ""
   ) {
     alert("Data tidak boleh kosong!");
     return false;
   }
+
+  if (!isValidLength(uts, 3)) {
+    return false;
+  }
+
+  if (!isValidLength(nama_mk, 10)) {
+    return false;
+  }
+
   return true;
+}
+
+function isValidLength(value, maxLength) {
+  return value.length <= maxLength;
 }
