@@ -1,7 +1,7 @@
 // Periksa status login saat halaman dimuat
 window.addEventListener("DOMContentLoaded", function () {
-  if (!isLoggedIn() && window.location.pathname !== "/login_admin.html") {
-    window.location.href = "/login_admin.html";
+  if (!isLoggedIn() && !isLoginPage()) {
+    window.location.href = "login_admin.html";
   }
 });
 
@@ -16,4 +16,11 @@ function isLoggedIn() {
     // Pengguna belum login
     return false;
   }
+}
+
+// Fungsi untuk memeriksa apakah halaman saat ini adalah halaman login
+function isLoginPage() {
+  const currentPage = window.location.pathname;
+  const loginPage = "/login_admin.html";
+  return currentPage === loginPage;
 }
