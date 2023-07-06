@@ -19,11 +19,22 @@
       if (sessionStorage.getItem("redirected")) {
         sessionStorage.removeItem("redirected");
       } else {
-        var isLoggedIn = /* Cek status login pengguna, misalnya dengan memeriksa cookie atau variabel status login */ false;
+        var isLoggedIn = getLoggedInStatus(); // Ganti dengan logika yang sesuai untuk memeriksa status login pengguna
 
         if (!isLoggedIn) {
           window.location.href = "login_admin.html"; // Redirect ke halaman login admin
         }
+      }
+
+      function getLoggedInStatus() {
+        // Ganti dengan logika yang sesuai untuk memeriksa status login pengguna
+        // Misalnya, periksa cookie atau token autentikasi
+        var loggedInCookie = document.cookie.split(";").find((cookie) => cookie.trim().startsWith("loggedIn="));
+        if (loggedInCookie) {
+          var loggedInValue = loggedInCookie.split("=")[1];
+          return loggedInValue === "true";
+        }
+        return false;
       }
     </script>
   </head>
