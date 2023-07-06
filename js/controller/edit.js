@@ -1,5 +1,4 @@
 import { updateGradeAndSkala } from "../tambahan/rata-rata.js";
-import { validasiForm } from "../tambahan/validasi.js";
 
 export function isiData(results) {
   const inputMapping = [
@@ -49,4 +48,11 @@ function getNestedValue(obj, path, index, property) {
 const inputElements = document.querySelectorAll('input[type="text"], input[type="number"]');
 inputElements.forEach((input) => {
   input.addEventListener("input", updateGradeAndSkala);
+});
+
+const saveButton = document.getElementById("button1"); 
+saveButton.addEventListener("click", function () {
+  if (!validasiInput()) {
+    return; // Stop further processing if validation fails
+  }
 });
