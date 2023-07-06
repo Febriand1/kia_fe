@@ -6,7 +6,7 @@ export function AmbilResponse(result) {
   if (result.status === 200) {
     const token = result.token;
     localStorage.setItem("jwtToken", token);
-    console.log(token);
+    // console.log(token);
     window.location.href = "index.html";
   } else {
     return false;
