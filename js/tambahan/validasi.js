@@ -49,9 +49,5 @@ export function validasiInput() {
     alert("Data tidak boleh kosong!");
     return false;
   }
-
-  if (tugas1.length > 3 || tugas2.length > 3 || tugas3 > 3 || tugas4.length > 3 || tugas5.length > 3 || uts.length > 3 || uas.length > 3 || sks.length > 1 || jammasuk.length > 5 || jamkeluar.length > 5) {
-    return false;
-  }
   return true;
 }
