@@ -18,8 +18,16 @@
     <script>
       if (sessionStorage.getItem("redirected")) {
         sessionStorage.removeItem("redirected");
+        // Setelah login berhasil, buatlah cookie atau token autentikasi yang menandakan bahwa pengguna sudah login
+        // Contoh menggunakan cookie:
+        document.cookie = "loggedIn=true; path=/";
+      }
+    </script>
+    <script>
+      if (document.cookie.indexOf("loggedIn=true") !== -1) {
+        // Pengguna sudah login, tidak perlu redirect lagi
       } else {
-        window.location.href = "login_admin.html"; // Ganti URL dengan halaman berikutnya jika perlu
+        window.location.href = "login_admin.html"; // Redirect ke halaman login admin
       }
     </script>
   </head>
