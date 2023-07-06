@@ -24,7 +24,7 @@ export function validasiInput() {
   var phonenumber = getValue("phonenumber");
 
   if (
-    tugas1.trim() === "" ||
+    tugas1.trim().length === "" ||
     tugas2.trim() === "" ||
     tugas3.trim() === "" ||
     tugas4.trim() === "" ||
@@ -50,17 +50,8 @@ export function validasiInput() {
     return false;
   }
 
-  if (!isValidLength(uts, 3)) {
+  if (tugas1.length > 3 || tugas2.length > 3 || tugas3 > 3 || tugas4.length > 3 || tugas5.length > 3 || uts.length > 3 || uas.length > 3 || sks.length > 1 || jammasuk.length > 5 || jamkeluar.length > 5) {
     return false;
   }
-
-  if (!isValidLength(nama_mk, 10)) {
-    return false;
-  }
-
   return true;
-}
-
-function isValidLength(value, maxLength) {
-  return value.length <= maxLength;
 }
