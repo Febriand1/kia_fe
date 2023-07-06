@@ -1,8 +1,12 @@
 import { putData } from "https://bukulapak.github.io/api/process.js";
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
 import { urlPUT, AmbilResponse } from "../config/url_put.js";
+import { validasiInput } from "../tambahan/validasi.js";
 
 function pushData() {
+  if (!validasiInput()) {
+    return;
+  }
   let data = {
     alltugas: {
       tugas1: parseInt(getValue("tugas1")),
