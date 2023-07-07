@@ -24,26 +24,26 @@ export function validasiInput() {
   var phonenumber = getValue("phonenumber");
 
   if (
-    tugas1.trim().lenght === "" ||
-    tugas2.trim() === "" ||
-    tugas3.trim() === "" ||
-    tugas4.trim() === "" ||
-    tugas5.trim() === "" ||
-    uts.trim() === "" ||
-    uas.trim() === "" ||
+    isNaN(tugas1) ||
+    isNaN(tugas2) ||
+    isNaN(tugas3) ||
+    isNaN(tugas4) ||
+    isNaN(tugas5) ||
+    isNaN(uts) ||
+    isNaN(uas) ||
     namagrade.trim() === "" ||
     skala.trim() === "" ||
     nama_mk.trim() === "" ||
-    sks.trim() === "" ||
+    isNaN(sks) ||
     jammasuk.trim() === "" ||
     jamkeluar.trim() === "" ||
     hari.trim() === "" ||
     namadosen.trim() === "" ||
     nik.trim() === "" ||
     phonenumberd.trim() === "" ||
-    jumlahkehadiran.trim() === "" ||
+    isNaN(jumlahkehadiran) ||
     nama.trim() === "" ||
-    npm.trim() === "" ||
+    isNaN(npm) ||
     phonenumber.trim() === ""
   ) {
     alert("Data tidak boleh kosong!");
