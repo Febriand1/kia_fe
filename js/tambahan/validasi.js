@@ -24,7 +24,7 @@ export function validasiInput() {
   var phonenumber = getValue("phonenumber");
 
   if (
-    tugas1.trim().length === "" ||
+    tugas1.trim() === "" ||
     tugas2.trim() === "" ||
     tugas3.trim() === "" ||
     tugas4.trim() === "" ||
