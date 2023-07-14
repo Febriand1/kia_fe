@@ -6,7 +6,7 @@ function checkAuthentication() {
   }
 
   var urlAuth = "https://ws-nilai.herokuapp.com/auth";
-  console.log(urlAuth);
+  //   console.log(urlAuth);
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append("Authorization", token); // Mengirim token JWT dalam header Authorization
@@ -21,6 +21,7 @@ function checkAuthentication() {
     .then((response) => response.json())
     .then((result) => {
       if (result.status === 200) {
+        console.log(result);
         // User is authenticated, proceed to index.html or auth/antrian.html
       } else {
         redirectToLoginAdmin();
