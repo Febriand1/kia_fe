@@ -1,29 +1,34 @@
 function checkAuthentication() {
-  const token = localStorage.getItem("jwtToken");
-  console.log(token);
+  var token = localStorage.getItem("jwtToken");
+
+  //   console.log(token);
   if (!token) {
     redirectToLoginAdmin();
-  } else {
-    // Make a GET request to the autentikasi endpoint
-    fetch("https://ws-nilai.herokuapp.com/auth", {
-      method: "POST",
-      headers: "'Content-Type', 'application/json'",
-      body: raw,
-      redirect: "follow",
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        if (result.status === 200) {
-          // User is authenticated, proceed to index.html or auth/antrian.html
-        } else {
-          redirectToLoginAdmin();
-        }
-      })
-      .catch((error) => {
-        console.log("Error:", error);
-        redirectToLoginAdmin();
-      });
   }
+
+  var urlAuth = "https://ws-nilai.herokuapp.com/auth";
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    redirect: "follow",
+  };
+
+  fetch(urlAuth, requestOptions)
+    .then((response) => response.json())
+    .then((result) => {
+      if (result.status === 200) {
+        // User is authenticated, proceed to index.html or auth/antrian.html
+      } else {
+        redirectToLoginAdmin();
+      }
+    })
+    .catch((error) => {
+      console.log("Error:", error);
+      redirectToLoginAdmin();
+    });
 }
 
 function redirectToLoginAdmin() {
