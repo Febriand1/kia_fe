@@ -7,7 +7,7 @@ function checkAuthentication() {
     // Make a GET request to the autentikasi endpoint
     fetch("https://ws-nilai.herokuapp.com/auth", {
       method: "POST",
-      headers: myHeaders,
+      headers: "'Content-Type', 'application/json'",
       body: raw,
       redirect: "follow",
     })
