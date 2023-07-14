@@ -3,8 +3,8 @@ const npmInput = document.getElementById("npm");
 const phoneNumberInput = document.getElementById("phonenumber");
 
 dropdown.addEventListener("change", () => {
-  const selectedOption = dropdown.options[dropdown.selectedIndex];
-  const selectedValue = selectedOption.value;
+  const selectedOption = dropdown.options[dropdown.nama];
+  const selectedValue = selectedOption._id;
 
   // Mengambil data mahasiswa dari API berdasarkan pilihan dropdown
   fetch(`https://ws-nilai.herokuapp.com/mhs${selectedValue}`)
