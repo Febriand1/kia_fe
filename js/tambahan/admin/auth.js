@@ -32,15 +32,14 @@ function checkAuthentication() {
 }
 
 function redirectToLoginAdmin() {
-  alert("Session expired. Please log in again.").then(() => {
-    // Redirect to the appropriate sign-in page
-    const currentPath = window.location.pathname.split("/").pop();
-    if (currentPath === "index.html") {
-      window.location.href = "login_admin.html";
-    } else {
-      window.location.href = "login_admin.html";
-    }
-  });
+  alert("Session expired. Please log in again.");
+  // Redirect to the appropriate sign-in page
+  const currentPath = window.location.pathname.split("/").pop();
+  if (currentPath === "index.html") {
+    window.location.href = "login_admin.html";
+  } else {
+    window.location.href = "login_admin.html";
+  }
 }
 
 // Call the checkAuthentication function when the page loads
