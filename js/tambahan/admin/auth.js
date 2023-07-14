@@ -38,7 +38,7 @@ function redirectToLoginAdmin() {
   if (currentPath === "index.html") {
     window.location.href = "login_admin.html";
   } else {
-    window.location.href = "login_admin.html";
+    window.location.href = "../login_admin.html";
   }
 }
 
