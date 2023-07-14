@@ -1,5 +1,5 @@
 function checkAuthentication() {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("jwtToken");
   console.log(token);
   if (!token) {
     redirectToLoginAdmin();
