@@ -1,7 +1,6 @@
 function checkAuthentication() {
   var token = localStorage.getItem("jwtToken");
 
-  //   console.log(token);
   if (!token) {
     redirectToLoginAdmin();
   }
@@ -9,6 +8,7 @@ function checkAuthentication() {
   var urlAuth = "https://ws-nilai.herokuapp.com/auth";
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
+  myHeaders.append("Authorization", token); // Mengirim token JWT dalam header Authorization
 
   var requestOptions = {
     method: "POST",
@@ -32,8 +32,7 @@ function checkAuthentication() {
 }
 
 function redirectToLoginAdmin() {
-  console.log(result.status);
-  alert(result.message).then(() => {
+  alert("Session expired. Please log in again.").then(() => {
     // Redirect to the appropriate sign-in page
     const currentPath = window.location.pathname.split("/").pop();
     if (currentPath === "index.html") {
