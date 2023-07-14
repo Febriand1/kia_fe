@@ -18,7 +18,7 @@ fetch("https://ws-nilai.herokuapp.com/matkul")
     result.forEach((item) => {
       const option = document.createElement("option");
       option.text = item.nama_mk; // Teks opsi
-      option.value = item._id; // Nilai opsi
+      option.value = item.nama_mk; // Nilai opsi
       matkulDropdown.appendChild(option);
     });
 
@@ -28,7 +28,7 @@ fetch("https://ws-nilai.herokuapp.com/matkul")
       const selectedValue = selectedOption.value;
 
       // Cari data matkul yang sesuai dengan nilai yang dipilih
-      const selectedMatkul = result.find((item) => item._id === selectedValue);
+      const selectedMatkul = result.find((item) => item.nama_mk === selectedValue);
 
       // Mengisi nilai sks pada input
       if (selectedMatkul) {

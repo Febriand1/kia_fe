@@ -9,7 +9,7 @@ fetch("https://ws-nilai.herokuapp.com/mhs")
     result.forEach((item) => {
       const option = document.createElement("option");
       option.text = item.nama; // Teks opsi
-      option.value = item._id; // Nilai opsi
+      option.value = item.nama; // Nilai opsi
       namaDropdown.appendChild(option);
     });
 
@@ -19,7 +19,7 @@ fetch("https://ws-nilai.herokuapp.com/mhs")
       const selectedValue = selectedOption.value;
 
       // Cari data mahasiswa yang sesuai dengan nilai yang dipilih
-      const selectedMahasiswa = result.find((item) => item._id === selectedValue);
+      const selectedMahasiswa = result.find((item) => item.nama === selectedValue);
 
       // Mengisi nilai npm dan no.hp pada input
       if (selectedMahasiswa) {
