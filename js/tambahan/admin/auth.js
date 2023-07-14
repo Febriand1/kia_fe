@@ -12,8 +12,8 @@ function checkAuthentication() {
       redirect: "follow",
     })
       .then((response) => response.json())
-      .then((data) => {
-        if (data.status === 200) {
+      .then((result) => {
+        if (result.status === 200) {
           // User is authenticated, proceed to index.html or auth/antrian.html
         } else {
           redirectToLoginAdmin();
