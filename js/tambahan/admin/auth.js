@@ -20,7 +20,7 @@ function checkAuthentication() {
   fetch(urlAuth, requestOptions)
     .then((response) => response.text())
     .then((result) => {
-      if (result.status === 200) {
+      if (result === 200) {
         console.log(result.status);
         // User is authenticated, proceed to index.html or auth/antrian.html
       } else {
