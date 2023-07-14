@@ -6,6 +6,7 @@ function checkAuthentication() {
   }
 
   var urlAuth = "https://ws-nilai.herokuapp.com/auth";
+  console.log(urlAuth);
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append("Authorization", token); // Mengirim token JWT dalam header Authorization
@@ -27,7 +28,6 @@ function checkAuthentication() {
     })
     .catch((error) => {
       console.log("Error:", error);
-      redirectToLoginAdmin();
     });
 }
 
