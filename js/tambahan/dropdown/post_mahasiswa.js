@@ -1,18 +1,20 @@
-fetch("https://ws-nilai.herokuapp.com/mhs")
-  .then((response) => response.json())
-  .then((result) => {
-    const nama = document.getElementById("nama");
-    // Mengisi dropdown dengan opsi-opsi dari data API
-    result.forEach((mhs) => {
-      const option = document.createElement("option");
-      option.text = mhs.nama; // Teks opsi
-      option.value = mhs._id; // Nilai opsi
-      option.value = mhs.npm; // Nilai opsi
-      option.value = mhs.phonenumber; // Nilai opsi
+const dropdown = document.getElementById("nama");
+const npmInput = document.getElementById("npm");
+const phoneNumberInput = document.getElementById("phonenumber");
 
-      nama.appendChild(option);
+dropdown.addEventListener("change", () => {
+  const selectedOption = dropdown.options[dropdown.selectedIndex];
+  const selectedValue = selectedOption.value;
+
+  // Mengambil data mahasiswa dari API berdasarkan pilihan dropdown
+  fetch(`https://ws-nilai.herokuapp.com/mhs${selectedValue}`)
+    .then((response) => response.json())
+    .then((data) => {
+      // Mengisi nilai npm dan no.hp berdasarkan data mahasiswa yang diperoleh
+      npmInput.value = data.npm;
+      phoneNumberInput.value = data.phonenumber;
+    })
+    .catch((error) => {
+      console.error("Terjadi kesalahan:", error);
     });
-  })
-  .catch((error) => {
-    console.error("Terjadi kesalahan:", error);
-  });
+});
