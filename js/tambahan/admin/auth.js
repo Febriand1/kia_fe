@@ -1,12 +1,12 @@
 function checkAuthentication() {
+  var urlAuth = "https://ws-nilai.herokuapp.com/auth";
+
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   const token = localStorage.getItem("jwtToken");
   var raw = JSON.stringify({
     token: token,
   });
-
-  var urlAuth = "https://ws-nilai.herokuapp.com/auth";
 
   var requestOptions = {
     method: "POST",
@@ -29,7 +29,6 @@ function checkAuthentication() {
       })
       .catch((error) => {
         console.log("Error:", error);
-        redirectToSignIn();
       });
   }
 }
@@ -39,7 +38,7 @@ function redirectToLoginAdmin() {
   // Redirect to the appropriate sign-in page
   const currentPath = window.location.pathname.split("/").pop();
   if (currentPath === "index.html") {
-    window.location.href = "../login_admin.html";
+    window.location.href = "login_admin.html";
   } else {
     // Redirect to login_admin.html for all other pages
     window.location.href = "login_admin.html";
