@@ -5,7 +5,7 @@ function checkAuthentication() {
   myHeaders.append("Content-Type", "application/json");
   const token = localStorage.getItem("jwtToken");
   var raw = JSON.stringify({
-    token: token,
+    tokenstring: token,
   });
 
   var requestOptions = {
