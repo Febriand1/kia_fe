@@ -16,7 +16,7 @@ function checkAuthentication() {
   };
 
   if (!token) {
-    redirectToSignIn();
+    redirectToLoginAdmin();
   } else {
     // Make a GET request to the autentikasi endpoint
     fetch(urlAuth, requestOptions)
@@ -24,7 +24,7 @@ function checkAuthentication() {
       .then((result) => {
         if (result.status === 200) {
         } else {
-          redirectToSignIn();
+          redirectToLoginAdmin();
         }
       })
       .catch((error) => {
