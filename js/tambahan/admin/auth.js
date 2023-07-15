@@ -1,33 +1,37 @@
 function checkAuthentication() {
-  var token = localStorage.getItem("jwtToken");
-
-  if (!token) {
-    redirectToLoginAdmin();
-  }
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  const token = localStorage.getItem("jwtToken");
+  var raw = JSON.stringify({
+    token: token,
+  });
 
   var urlAuth = "https://ws-nilai.herokuapp.com/auth";
-  var myHeaders = new Headers();
-  myHeaders.append("Authorization", token);
 
   var requestOptions = {
     method: "POST",
     headers: myHeaders,
+    body: raw,
     redirect: "follow",
   };
 
-  fetch(urlAuth, requestOptions)
-    .then((response) => response.text())
-    .then((result) => {
-      if (result === "authenticated") {
-        // User is authenticated, proceed with the current page
-        // Add your logic here to handle the authenticated state
-      } else {
-        redirectToLoginAdmin();
-      }
-    })
-    .catch((error) => {
-      console.log("Error:", error);
-    });
+  if (!token) {
+    redirectToSignIn();
+  } else {
+    // Make a GET request to the autentikasi endpoint
+    fetch(urlAuth, requestOptions)
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.status === 200) {
+        } else {
+          redirectToSignIn();
+        }
+      })
+      .catch((error) => {
+        console.log("Error:", error);
+        redirectToSignIn();
+      });
+  }
 }
 
 function redirectToLoginAdmin() {
