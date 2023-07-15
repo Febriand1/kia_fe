@@ -6,9 +6,8 @@ function checkAuthentication() {
   }
 
   var urlAuth = "https://ws-nilai.herokuapp.com/auth";
-  //   console.log(urlAuth);
   var myHeaders = new Headers();
-  myHeaders.append("Authorization", token); // Mengirim token JWT dalam header Authorization
+  myHeaders.append("Authorization", token);
 
   var requestOptions = {
     method: "POST",
@@ -19,8 +18,9 @@ function checkAuthentication() {
   fetch(urlAuth, requestOptions)
     .then((response) => response.text())
     .then((result) => {
-      if (result === 200) {
-        // User is authenticated, proceed to index.html or auth/antrian.html
+      if (result === "authenticated") {
+        // User is authenticated, proceed with the current page
+        // Add your logic here to handle the authenticated state
       } else {
         redirectToLoginAdmin();
       }
@@ -37,7 +37,8 @@ function redirectToLoginAdmin() {
   if (currentPath === "index.html") {
     window.location.href = "login_admin.html";
   } else {
-    return true;
+    // Redirect to login_admin.html for all other pages
+    window.location.href = "login_admin.html";
   }
 }
 
