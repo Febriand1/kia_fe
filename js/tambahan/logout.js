@@ -1,8 +1,9 @@
 // Fungsi untuk logout
 function logout() {
-  // Menampilkan Sweet Alert konfirmasi
+  // Menampilkan konfirmasi
+  var result = confirm("Are you sure you want to logout?");
 
-  if (result.isConfirmed) {
+  if (result) {
     // Menghapus token dari local storage atau cookie
     localStorage.removeItem("jwtToken"); // Jika menggunakan local storage
     localStorage.removeItem("previousPageURL"); // Jika menggunakan local storage
