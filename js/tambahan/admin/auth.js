@@ -1,6 +1,4 @@
 function checkAuthentication() {
-  var urlAuth = "https://ws-nilai.herokuapp.com/auth";
-
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   const token = localStorage.getItem("jwtToken");
@@ -8,39 +6,37 @@ function checkAuthentication() {
     tokenstring: token,
   });
 
-  var requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow",
-  };
-
   if (!token) {
-    redirectToLoginAdmin();
+    redirectLoginAdmin();
   } else {
     // Make a GET request to the autentikasi endpoint
-    fetch(urlAuth, requestOptions)
+    fetch("https://ws-nilai.herokuapp.com/auth", {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    })
       .then((response) => response.json())
       .then((result) => {
         if (result.status === 200) {
         } else {
-          redirectToLoginAdmin();
+          redirectLoginAdmin();
         }
       })
       .catch((error) => {
         console.log("Error:", error);
+        redirectLoginAdmin();
       });
   }
 }
 
-function redirectToLoginAdmin() {
+function redirectLoginAdmin() {
   alert("Session expired. Please log in again.");
-  // Redirect to the appropriate sign-in page
+  // Redirect to login.html
   const currentPath = window.location.pathname.split("/").pop();
   if (currentPath === "index.html") {
     window.location.href = "login_admin.html";
   } else {
-    // Redirect to login_admin.html for all other pages
     window.location.href = "login_admin.html";
   }
 }
